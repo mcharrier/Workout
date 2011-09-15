@@ -64,7 +64,10 @@ class WorkoutsessionsController < ApplicationController
     @workoutsession = Workoutsession.find(params[:id])
 
     respond_to do |format|
+      wt = params[:workoutsession].delete(:workout_type)
       if @workoutsession.update_attributes(params[:workoutsession])
+        @workoutsession.workout_type_id = wt
+        @workoutsession.save
         format.html { redirect_to(@workoutsession, :notice => 'Workoutsession was successfully updated.') }
         format.xml  { head :ok }
       else
