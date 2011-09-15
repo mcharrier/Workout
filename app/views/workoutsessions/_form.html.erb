@@ -1,0 +1,24 @@
+<%= form_for(@workoutsession) do |f| %>
+  <% if @workoutsession.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@workoutsession.errors.count, "error") %> prohibited this workoutsession from being saved:</h2>
+
+      <ul>
+      <% @workoutsession.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="field">
+  <%= f.label 'Workout type' %>
+  <%= f.select :workout_type, options_from_collection_for_select(WorkoutType.all, :id, :name)  %>
+</div>
+  <div class="field">
+    <%= f.label :duration %><br />
+    <%= f.text_field :duration %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

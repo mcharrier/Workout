@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @workout_type.name %>
+</p>
+
+<p>
+  <b>Cpm:</b>
+  <%= @workout_type.cpm %>
+</p>
+
+
+<%= link_to 'Edit', edit_workout_type_path(@workout_type) %> |
+<%= link_to 'Back', workout_types_path %>

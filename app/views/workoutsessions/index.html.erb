@@ -1,0 +1,24 @@
+<h1>Listing workoutsessions</h1>
+Calories Burned: <%= @calories  %>
+<table>
+  <tr>
+    <th>Workout</th>
+    <th>Duration</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @workoutsessions.each do |workoutsession| %>
+  <tr>
+    <td><%= WorkoutType.find(workoutsession.workout_type_id).name %> </td>
+    <td><%= workoutsession.duration %></td>
+    <td><%= link_to 'Show', workoutsession %></td>
+    <td><%= link_to 'Edit', edit_workoutsession_path(workoutsession) %></td>
+    <td><%= link_to 'Destroy', workoutsession, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Workoutsession', new_workoutsession_path %>

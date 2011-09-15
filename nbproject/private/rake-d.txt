@@ -1,0 +1,1 @@
+[31mCould not find gem 'rails (= 3.0.10, runtime)' in the gems available on this machine.[0m
