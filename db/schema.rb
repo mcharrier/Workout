@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20110915034044) do
     t.integer  "cpm"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "workoutsession_id"
   end
 
   create_table "workoutsessions", :force => true do |t|
